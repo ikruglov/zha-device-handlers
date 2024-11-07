@@ -12,6 +12,8 @@ from zhaquirks.nodon import NODON, NodOnPilotWireCluster, NodOnPilotWireMode
         enum_class=NodOnPilotWireMode,
         cluster_id=NodOnPilotWireCluster.cluster_id,
         entity_type=EntityType.STANDARD,
+        translation_key="pilot_wire",
+        fallback_name="Pilot Wire",
     )
     .add_to_registry()
 )
