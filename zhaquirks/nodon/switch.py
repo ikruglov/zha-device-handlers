@@ -1,15 +1,15 @@
 """NodOn on/off switch two channels."""
 
+from zha.units import UnitOfTime
 from zigpy.quirks import CustomCluster
 from zigpy.quirks.v2 import QuirkBuilder
 from zigpy.quirks.v2.homeassistant.number import NumberDeviceClass
 import zigpy.types as t
-from zigpy.zcl.clusters.general import LevelControl
-from zigpy.zcl.clusters.general import OnOff
-from zigpy.zcl.foundation import ZCLAttributeDef, DataTypeId
-from zha.units import UnitOfTime
+from zigpy.zcl.clusters.general import LevelControl, OnOff
+from zigpy.zcl.foundation import DataTypeId, ZCLAttributeDef
 
 NODON = "NodOn"
+
 
 class NodOnSwitchType(t.enum8):
     """NodOn switch type."""
@@ -29,7 +29,7 @@ class OnOffSIN4_1_20(OnOff, CustomCluster):
         switch_type = ZCLAttributeDef(
             id=0x1001,
             type=NodOnSwitchType,
-            zcl_type=DataTypeId.enum8, # need to explicitly set ZCL type
+            zcl_type=DataTypeId.enum8,  # need to explicitly set ZCL type
             is_manufacturer_specific=True,
         )
 
@@ -39,6 +39,7 @@ class OnOffSIN4_1_20(OnOff, CustomCluster):
             type=t.uint16_t,
             is_manufacturer_specific=True,
         )
+
 
 class OnOffSIN4_2_20(OnOff, CustomCluster):
     """NodOn custom OnOff cluster for SIN-4-2-20 and alike"""
@@ -50,9 +51,10 @@ class OnOffSIN4_2_20(OnOff, CustomCluster):
         switch_type = ZCLAttributeDef(
             id=0x1001,
             type=NodOnSwitchType,
-            zcl_type=DataTypeId.enum8, # need to explicitly set ZCL type
+            zcl_type=DataTypeId.enum8,  # need to explicitly set ZCL type
             is_manufacturer_specific=True,
         )
+
 
 (
     # quirk is similar to https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/nodon.ts#L100
@@ -79,8 +81,8 @@ class OnOffSIN4_2_20(OnOff, CustomCluster):
         unit=UnitOfTime.MILLISECONDS,
         device_class=NumberDeviceClass.DURATION,
         initially_disabled=True,
-        translation_key='impulse_mode_duration',
-        fallback_name='Impulse mode duration',
+        translation_key="impulse_mode_duration",
+        fallback_name="Impulse mode duration",
     )
     .add_to_registry()
 )
