@@ -61,7 +61,7 @@ class OnOffSIN4_2_20(OnOff, CustomCluster):
     QuirkBuilder(NODON, "SIN-4-1-20")
     .applies_to(NODON, "SIN-4-1-21")
     .applies_to(NODON, "SIN-4-1-20_PRO")
-    # .filter() TODO this should be applied to firmware 3.5.0+, but I didn't find a way to reliably detect it .
+    # .filter() TODO this should be applied to firmware 3.4.0+, but I didn't find a way to reliably detect it .
     #           Please let me know if you know how
     .replaces(OnOffSIN4_1_20)
     .enum(
@@ -93,7 +93,7 @@ class OnOffSIN4_2_20(OnOff, CustomCluster):
     .applies_to(NODON, "SIN-4-2-20_PRO")
     .removes(cluster_id=LevelControl.cluster_id, endpoint_id=1)
     .removes(cluster_id=LevelControl.cluster_id, endpoint_id=2)
-    # .filter() TODO this should be applied to firmware 3.5.0+, but I didn't find a way to reliably detect it .
+    # .filter() TODO this should be applied to firmware 3.4.0+, but I didn't find a way to reliably detect it .
     #           Please let me know if you know how
     .replaces(OnOffSIN4_2_20, endpoint_id=1)
     .replaces(OnOffSIN4_2_20, endpoint_id=2)
