@@ -20,12 +20,12 @@ class NodOnSwitchType(t.enum8):
 
 
 class OnOffSIN4_1_20(OnOff, CustomCluster):
-    """NodOn custom OnOff cluster for SIN-4-1-20 and alike"""
+    """NodOn custom OnOff cluster for SIN-4-1-20 and alike."""
 
     class AttributeDefs(OnOff.AttributeDefs):
         """Attribute definitions."""
 
-        """Select the switch type wire to the device. Available from version > V3.4.0"""
+        """Select the switch type wire to the device. Available from version > V3.4.0."""
         switch_type = ZCLAttributeDef(
             id=0x1001,
             type=NodOnSwitchType,
@@ -42,12 +42,12 @@ class OnOffSIN4_1_20(OnOff, CustomCluster):
 
 
 class OnOffSIN4_2_20(OnOff, CustomCluster):
-    """NodOn custom OnOff cluster for SIN-4-2-20 and alike"""
+    """NodOn custom OnOff cluster for SIN-4-2-20 and alike."""
 
     class AttributeDefs(OnOff.AttributeDefs):
         """Attribute definitions."""
 
-        """Select the switch type wire to the device. Available from version > V3.4.0"""
+        """Select the switch type wire to the device. Available from version > V3.4.0."""
         switch_type = ZCLAttributeDef(
             id=0x1001,
             type=NodOnSwitchType,
