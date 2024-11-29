@@ -1,8 +1,8 @@
 """NodOn on/off switch two channels."""
 
-from zha.units import UnitOfTime
 from zigpy.quirks import CustomCluster
 from zigpy.quirks.v2 import QuirkBuilder
+from zigpy.quirks.v2.homeassistant import UnitOfTime
 from zigpy.quirks.v2.homeassistant.number import NumberDeviceClass
 import zigpy.types as t
 from zigpy.zcl.clusters.general import LevelControl, OnOff
