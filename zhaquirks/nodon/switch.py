@@ -30,6 +30,7 @@ class OnOffSIN4_1_20(OnOff, CustomCluster):
             id=0x1001,
             type=NodOnSwitchType,
             zcl_type=DataTypeId.enum8,  # need to explicitly set ZCL type
+            access="rw",
             is_manufacturer_specific=True,
         )
 
@@ -37,6 +38,7 @@ class OnOffSIN4_1_20(OnOff, CustomCluster):
         impulse_mode_duration = ZCLAttributeDef(
             id=0x0001,
             type=t.uint16_t,
+            access="rw",
             is_manufacturer_specific=True,
         )
 
@@ -52,6 +54,7 @@ class OnOffSIN4_2_20(OnOff, CustomCluster):
             id=0x1001,
             type=NodOnSwitchType,
             zcl_type=DataTypeId.enum8,  # need to explicitly set ZCL type
+            access="rw",
             is_manufacturer_specific=True,
         )
 
