@@ -71,6 +71,14 @@ adeo = (
     nodon.clone(omit_man_model_data=True)
     .applies_to(ADEO, "SIN-4-FP-21_EQU")
     .replaces(AdeoPilotWireCluster)
+    .enum(
+        attribute_name=AdeoPilotWireCluster.AttributeDefs.pilot_wire_mode.name,
+        enum_class=NodOnPilotWireMode,
+        cluster_id=AdeoPilotWireCluster.cluster_id,
+        entity_type=EntityType.STANDARD,
+        translation_key="pilot_wire_mode",
+        fallback_name="Pilot wire mode",
+    )
 )
 
 
